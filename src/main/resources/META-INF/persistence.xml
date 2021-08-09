@@ -3,11 +3,13 @@
 
     <persistence-unit name="jpastudy">
         <!-- gradle auto scan 실패로 인해 추가 -->
+        <class>com.ksnote.jpastudy.entity.Category</class>
+        <class>com.ksnote.jpastudy.entity.Delivery</class>
         <class>com.ksnote.jpastudy.entity.Item</class>
+        <class>com.ksnote.jpastudy.entity.Member</class>
         <class>com.ksnote.jpastudy.entity.Order</class>
         <class>com.ksnote.jpastudy.entity.OrderItem</class>
-        <class>com.ksnote.jpastudy.entity.Member</class>
-        <class></class>
+
         <properties>
             <!-- H2 데이터베이스 드라이버 및 설정 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
