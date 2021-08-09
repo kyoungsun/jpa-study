@@ -9,7 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "ORDER_ITEM")
 @Entity
-public class OrderItem {
+public class OrderItem extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "ORDER_ITEM_ID")
