@@ -10,11 +10,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.hibernate:hibernate-entitymanager:5.5.5.Final'
-    testImplementation 'com.h2database:h2:1.4.200'
-
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }

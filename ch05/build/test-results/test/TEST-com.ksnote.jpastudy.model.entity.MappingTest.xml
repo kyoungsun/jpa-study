@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ksnote.jpastudy.model.entity.MappingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-09T08:33:39" hostname="DESKTOP-FIRAL60" time="1.486">
+  <properties/>
+  <testcase name="주문한_회원_참조()" classname="com.ksnote.jpastudy.model.entity.MappingTest" time="1.486"/>
+  <system-out><![CDATA[Hibernate: drop table Item if exists
+Hibernate: drop table Member if exists
+Hibernate: drop table ORDERS if exists
+Hibernate: drop table ORDER_ITEM if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create table Item (ITEM_ID bigint not null, name varchar(255), price integer not null, stockQuantity integer not null, primary key (ITEM_ID))
+Hibernate: create table Member (MEMBER_ID bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key (MEMBER_ID))
+Hibernate: create table ORDERS (ORDER_ID bigint not null, orderDate binary(255), status varchar(255), MEMBER_ID bigint, primary key (ORDER_ID))
+Hibernate: create table ORDER_ITEM (ORDER_ITEM_ID bigint not null, count integer not null, orderPrice integer not null, ITEM_ID bigint, ORDER_ID bigint, primary key (ORDER_ITEM_ID))
+Hibernate: alter table ORDERS add constraint FK_qiycd4ok215wf6ngu3ririai5 foreign key (MEMBER_ID) references Member
+Hibernate: alter table ORDER_ITEM add constraint FK_gcc1qlqe2x3n5378dtqhcbplh foreign key (ITEM_ID) references Item
+Hibernate: alter table ORDER_ITEM add constraint FK_67aq174ged86cpv5ejbpkpqpy foreign key (ORDER_ID) references ORDERS
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: call next value for hibernate_sequence
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Member (city, name, street, zipcode, MEMBER_ID) values (?, ?, ?, ?, ?)
+Hibernate: insert into ORDERS (MEMBER_ID, orderDate, status, ORDER_ID) values (?, ?, ?, ?)
+Hibernate: delete from ORDERS where ORDER_ID=?
+Hibernate: delete from Member where MEMBER_ID=?
+]]></system-out>
+  <system-err><![CDATA[8월 09, 2021 5:33:39 오후 org.hibernate.ejb.HibernatePersistence logDeprecation
+WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+8월 09, 2021 5:33:39 오후 org.hibernate.ejb.HibernatePersistence logDeprecation
+WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+8월 09, 2021 5:33:39 오후 org.hibernate.ejb.HibernatePersistence logDeprecation
+WARN: HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+8월 09, 2021 5:33:39 오후 org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: jpastudy
+	...]
+8월 09, 2021 5:33:39 오후 org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.10.Final}
+8월 09, 2021 5:33:39 오후 org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+8월 09, 2021 5:33:39 오후 org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+8월 09, 2021 5:33:39 오후 org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+8월 09, 2021 5:33:40 오후 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+8월 09, 2021 5:33:40 오후 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000401: using driver [org.h2.Driver] at URL [jdbc:h2:tcp://localhost/~/test]
+8월 09, 2021 5:33:40 오후 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000046: Connection properties: {user=sa}
+8월 09, 2021 5:33:40 오후 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH000006: Autocommit mode: false
+8월 09, 2021 5:33:40 오후 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+8월 09, 2021 5:33:40 오후 org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+8월 09, 2021 5:33:40 오후 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+8월 09, 2021 5:33:40 오후 org.hibernate.tool.hbm2ddl.SchemaExport execute
+INFO: HHH000227: Running hbm2ddl schema export
+8월 09, 2021 5:33:40 오후 org.hibernate.tool.hbm2ddl.SchemaExport execute
+INFO: HHH000230: Schema export complete
+8월 09, 2021 5:33:41 오후 org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl stop
+INFO: HHH000030: Cleaning up connection pool [jdbc:h2:tcp://localhost/~/test]
+]]></system-err>
+</testsuite>
