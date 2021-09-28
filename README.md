@@ -6,5 +6,4 @@
 * Maven -> Gradle
 * JSP -> mustache
 
-### 참고자료
-* 
+### 참고자료 
