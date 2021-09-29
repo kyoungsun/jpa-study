@@ -1,5 +1,6 @@
 package com.ksnote.jpastudy.domain.demo;
 
+import com.ksnote.jpastudy.item.Item;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

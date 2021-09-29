@@ -1,4 +1,4 @@
-package com.ksnote.jpastudy.domain.demo;
+package com.ksnote.jpastudy.item;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -24,7 +24,7 @@ public class Item {
     private int stockQuantity;
 
     @Builder
-    public Item(String name, int price, int stockQuantity) {
+    private Item(String name, int price, int stockQuantity) {
         this.name = name;
         this.price = price;
         this.stockQuantity = stockQuantity;
